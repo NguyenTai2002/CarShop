@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="../JS/bootstrap.js"></script>
+      <script src="../JS/jquery-3.6.4.min.js"></script>
+      <script src="../JS/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="../CSS/bootstrap-utilities.css">
+      <link rel="stylesheet" href="../CSS/bootstrap.css">
+      <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../CSS/base.css">
+      <style>
+            .navbar{
+                  position: relative;
+                  background-color: #ff858562;
+            }
+            .nav-list{
+                  display: flex;
+                  list-style:none;
+            }
+            ul{
+                  list-style-type: none;
+                  padding: 0;
+            }
+            .dropdown{
+                  display: none;
+            }
+            .nav-item:hover > .dropdown{
+                  display: block;
+            } 
+            .nav-item{
+                   padding: 6px 24px;
+                   list-style: none;
+                   margin: 0;
+            }
+            .nav-item-link{
+                  color: #fff;
+                  font-size: 1.2rem;
+                  
+            }
+            .nav-item-link:hover{
+                  color: var(--color-yellow-main);
+            }
+            @media (max-width: 768px) {
+                  .nav-list{
+                        flex-direction: column;
+                  }
+                  .dropdown{
+                        position: absolute;
+                        top: 0;
+                        right: 50%;
+                  }
+
+            }
+            
+      </style>
+</head>
+
+<body>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="navbar navbar-expand" id="collapseExample">
+            <ul class="nav-list">
+                  <li class="nav-item"><a href="#" class="nav-item-link">adventador</a></li>
+                  <li class="nav-item"><a href="#" class="nav-item-link">huracan</a></li>
+                  <li class="nav-item"><a href="#" class="nav-item-link">Urus</a></li>
+                  <li class="nav-item"><a href="#" class="nav-item-link">pre-owned</a></li>
+                  <li class="nav-item"><a href="#" class="nav-item-link">services</a>
+                        <ul class="dropdown">
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>
+                        </ul>
+                  </li>
+                  <li class="nav-item"><a href="#" class="nav-item-link">Item</a>
+                        <ul class="dropdown">
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>
+                              <li class="nav-item"><a href="" class="nav-item-link">sub-item</a></li>      
+                        </ul>
+                  </li>
+            </ul>
+      </nav>
+      <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                        <ul class="header-nav nav nav-pills nav-fill align-items-center d-flex flex-column justify-content flex-sm-row">
+                              <li class="nav-item"><a href="#" class="nav-link">Aventador S</a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Huracán</a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Urus</a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Pre-Owned</a></li>
+                              <li class="nav-item display"><a href="" class="nav-link">Service</a>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    </ul>
+                              </li>
+                              <li class="nav-item"><a href="" class="nav-link">Events</a></li>
+                              <li class="nav-item display"><a href="#" class="nav-link">Contact Us</a>
+                                    <ul class="dropdown-menu ">
+                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    </ul>
+                              </li>
+                        </ul>
+                  </ul>
+                  <form class="d-flex justify-content-start">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+            </div>
+      </nav>
+
+</body>
+
+</html>
