@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="../JS/jquery-3.6.4.min.js"></script>
+      <script src="../JS/bootstrap.min.js"></script>
+      <script src="../JS/bootstrap.js"></script>
+      <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+      <link rel="stylesheet" href="../CSS/bootstrap.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+      <link rel="shortcut icon" href="../images/logo/logo-brand.png" type="image/x-icon">
+
+      <link rel="stylesheet" href="../CSS/styles.css">
+      <link rel="stylesheet" href="../CSS/base.css">
+      <title>Login</title>
+</head>
+<script>
+     
+</script>
+
+<body>
+      <div id="auth" class="container-fluid">
+            <video id="video-bg" autoplay loop muted>
+                  <source src="../images/home-bg/Lamborghini-Montreal-Hero-Home.mp4" type="video/mp4">
+            </video>
+            <div class="row align-items-center">
+                  <div class="col col-lg-6">
+                        <div class="login-heading col  d-flex align-items-center justify-content-center">
+                              <h1>Lamborghini <br> montreal</h1>
+                        </div>
+                        <div id="login-carousel" class="carousel slide" data-bs-ride="carousel">
+                              <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="2500">
+                                          <img style="height: 20rem;" src="" alt="">
+                                          <div class="carousel-caption ">
+                                                <h5>A DIVISION OF THE JOHN SCOTTI AUTOMOTIVE GROUP</h5>
+                                                <p>Welcome to your Lamborghini dealer in Montreal, a proud member of the John Scotti Automotive Group since 1979. As the
+                                                very first Lamborghini franchise in Canada and in North America, we have earned the trust of a demanding clientele that
+                                                seeks world-class performance and exclusive Italian quality. Among our wide selection of new Lamborghinis for sale,
+                                                these prestigious cars that are as innovative as they are spectacular speak for themselves: Lamborghini Aventador S,
+                                                Lamborghini Huracán EVO and Lamborghini Urus, a stunning SUV incorporating the DNA of a super sports car.</p>
+                                          </div>
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="2500">
+                                          <img style="height: 20rem;" src="" alt="">
+                                          <div class="carousel-caption ">
+                                                <h5>PRE-OWNED
+                                                      LAMBORGHINI INVENTORY</h5>
+                                                <p>Lamborghini Montreal occupies a special place in the pre-owned
+                                                      universe of luxury cars in Canada and North America. Whether
+                                                      you’re a first time buyer or an experienced collector, you’ll find
+                                                      a large inventory of pre-owned Lamborghinis available at our
+                                                      Kirkland dealership, recent or classic, in their premium genuine
+                                                      condition. Our pre-owned Lamborghini department displays very low
+                                                      mileage vehicles that were maintained with exceptional care.</p>
+                                          </div>
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="2500">
+                                          <img style="height: 20rem;" src="" alt="">
+                                          <div class="carousel-caption ">
+                                                <h5>AFTER-SALES SERVICE</h5>
+                                                <p>As a true work of art on the road, every Lamborghini is hand assembled in Italy by highly qualified specialists. That is
+                                                why, at Lamborghini Montreal, we pay careful attention to each of our customers, by offering a complete range of
+                                                Lamborghini services including service maintenance, mechanical repairs, body shop as well as customization of new and
+                                                pre-owned vehicles.</p>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="col col-lg-6 form-login">
+                        <div id="login" class="container text-center">
+                              <div class="d-flex flex-column align-items-center">
+                                    <img src="../images/logo/logo-brand.png" alt="" class="logo-login">
+                                    <h2>Welcome to Lamborghinimontreal</h2>
+                              </div>
+                              <form action="post" class="text-center mt-5">
+                                    <p class="h4 mb-5">Please login to your account</p>
+                                    <div class="d-flex flex-column mb-4 input-item form-group">
+                                          <input class="w-100 mb-3" type="text" id="username" onchange="" required>
+                                          <label for="username">Username or email</label>
+                                          <span id="input-message "></span>
+                                    </div>
+                                    <div class="d-flex flex-column mb-4 input-item form-group">
+                                          <input class="w-100 mb-3" type="password" id="password" required>
+                                          <label for="password">Password</label>
+                                          <span id="input-message "></span>
+                                    </div>
+                              </form>
+                              <div>
+                                    <button type="submit" class="btn mb-4" id="loginbtn">LOG IN</button>
+                              </div>
+                              <div class="save-profile">
+                                    <input type="checkbox">
+                                    <label for="">Remember me</label>
+                              </div>
+                              <div class="create-acc">
+                                    <span>Don't have an account?</span>
+                                    <button type="button" id="create-new">CREATE NEW</button>
+                              </div>
+                        </div>
+
+                        <div id="signup" class="container text-center">
+                              <div class="d-flex flex-column align-items-center">
+                                    <img src="../images/logo/logo-brand.png" alt="" class="logo-login">
+                                    <h2>Welcome to Lamborghinimontreal</h2>
+                              </div>
+                              <form action="post" class="text-center mt-5">
+                                    <p class="h4 mb-5">Please fill information to create account</p>
+                                    <div class="row">
+                                          <div class="col">
+                                                <div class="d-flex flex-column mb-4 input-item form-group">
+                                                      <input class="w-100 mb-3" type="text" id="fName" required>
+                                                      <label for="fName">First name</label>
+                                                      <span id="input-message"></span>
+                                                </div>
+                                          </div>
+                                          <div class="col">
+                                                <div class="d-flex flex-column mb-4 input-item form-group">
+                                                      <input class="w-100 mb-3" type="text" id="lName" required>
+                                                      <label for="lName">Last name</label>
+                                                      <span id="input-message"></span>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="d-flex flex-column mb-4 input-item form-group">
+                                          <input class="w-100 mb-3" type="text" id="signup-username" required>
+                                          <label for="username">Username or email</label>
+                                          <span id="input-message"></span>
+                                    </div>
+                                    <div class="d-flex flex-column mb-4 input-item form-group">
+                                          <input class="w-100 mb-3" type="password" id="password" required>
+                                          <label for="password">Password</label>
+                                          <span id="input-message "></span>
+                                    </div>
+                                    <div class="d-flex flex-column mb-4 input-item form-group">
+                                          <input class="w-100 mb-3" type="password" id="re-signup-password" required>
+                                          <label for="password">Confirm Password</label>
+                                          <span id="input-message"></span>
+                                    </div>
+                              </form>
+                              <div>
+                                    <button type="submit" class="btn mb-4" id="loginbtn">SIGN UP</button>
+                              </div>
+                              <div class="save-profile">
+                                    <input type="checkbox">
+                                    <label for="">Subscribe to our newsletter</label>
+                              </div>
+                              <div class="create-acc">
+                                    <span>Do you have an account?</span>
+                                    <button type="button" id="log-in">LOG IN</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <script src="../JS/index.js"></script>
+</body>
+
+</html>

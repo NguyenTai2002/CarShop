@@ -5,7 +5,7 @@ body .container-fluid {
 .header {
   display: grid;
   grid-template-columns: [first] 20% auto [last] 20%;
-  padding: 32px 0;
+  padding: 24px 0;
   position: relative;
 
 }
@@ -17,23 +17,20 @@ body .container-fluid {
   right: 0;
   left: 0;
   z-index: 100;
-  
 }
+
 .header-logo-brand {
   text-align: center;
   margin: 0 auto;
 }
 
 .header-info {
-  width: 60px;
-  height: 48px;
   margin-right: 0;
   position: absolute;
   right: 0;
   background-color: transparent;
-  border: 2px solid var(--color-white-main);
-  border-radius: 12px;
   font-size: 1.5rem;
+  padding: 1rem;
   transition: all 0.35s ease-out;
 }
 
@@ -46,7 +43,7 @@ body .container-fluid {
   right: 0;
   color: var(--color-white-main);
   padding: 0 12px;
-  border: 2px solid var(--color-white-main);
+  border: 2px solid var(--color-yellow-main);
   border-radius: 5px;
   font-size: 1.5rem;
 }
@@ -66,19 +63,24 @@ body .container-fluid {
 
 .navbar {
   position: relative;
-  
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; 
+  transition: all 0.35s linear;
+  backdrop-filter: saturate(200%) blur(25px);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
+
 .nav-list {
   display: flex;
   width: 100%;
   justify-content: space-between;
   list-style: none;
+  transition: all 0.35s linear;
 }
 
 .navbar ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 0;
 }
 
 .dropdown {
@@ -93,39 +95,24 @@ body .container-fluid {
   padding: 6px 24px;
   list-style: none;
   margin: 0;
-  transition: all 0.35s ease-out;
 }
 
 .nav-item-link {
-  color: #000;
   font-size: 1.2rem;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
+  color: #000;
   transition: all 0.35s ease-out;
 }
 
 .nav-item-link:hover {
   color: var(--color-yellow-main);
 }
-.toggle-button{
+
+.toggle-button {
   display: none;
   background-color: transparent;
-}
-@media (max-width: 768px) {
-  .nav-list {
-    flex-direction: column;
-  }
-
-  .dropdown {
-    position: absolute;
-    top: 0;
-    right: 50%;
-  }
-  .toggle-button{
-    display: inline-block;
-  }
-
 }
 
 /* CONTENT SECTION */
@@ -176,6 +163,106 @@ body .container-fluid {
   transform: translate(-50%, -50%);
 }
 
+/* product */
+.inventory-banner {
+  background-color: #ffffff85;
+  color: #000;
+  padding: 5rem 0;
+  /* background: rgba(255, 255, 255, 0.25); */
+}
+
+.inventory-heading-main {
+  font-size: 6rem;
+  font-weight: 800;
+  font-family: 'montserrat';
+}
+
+.inventory-heading-sub {
+  font-size: 3rem;
+  font-weight: 200;
+  font-family: 'montserrat';
+}
+
+#product-list {
+  padding: 3.6rem 0;
+}
+.product-content-card{
+  padding: 12px;
+
+}
+.product-item {
+  padding: 1rem;
+  color: #000033;
+}
+.product-item:hover .product-img{
+  transform: scale(1.01);
+  transition: all 0.35s ease-in-out;
+}
+.product-img{
+  border-radius: 6px;
+}
+.product-price {
+  font-size: 3rem;
+  line-height: 1;
+
+}
+
+.product-name{
+  font-size: 4rem;
+  color: #000;
+  font-family: 'montserrat', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.product-name-card{
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 4rem;
+  font-family: 'montserrat';
+}
+.product-price-card{
+  font-size: 3rem;
+  font-family: 'poppins';
+}
+.product-odo,
+.product-propulsion,
+.product-transmission{
+  font-size: 1.2rem;
+  text-align: center;
+}
+.desc {
+  padding: 3rem 0;
+}
+
+.product-desc {
+  font-size: 2rem;
+}
+
+.product-btn button {
+  font-size: 2rem;
+}
+
+.product-content-detail>.product-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.product-content-detail {
+  position: relative;
+  /* height: 350px; */
+}
+.product-svg{
+  width: auto;
+  height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/**************************************** footer*********************************/
+
 footer>.container {
   padding: 36px 0;
 }
@@ -205,6 +292,271 @@ footer>.container {
   bottom: 0;
   left: 0;
   animation: dynamic-border linear 0.3s forwards;
+}
+
+
+
+/* authentication page */
+
+
+
+#auth {
+  overflow: hidden;
+}
+
+#auth video {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
+
+@media (min-width:768px) {
+  #video-bg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width:768px) {
+  #video-bg {
+    width: auto;
+    height: 100vh;
+    display: none;
+  }
+
+  .div {
+    position: absolute;
+    top: 74px;
+    width: 100%;
+    overflow: scroll;
+    z-index: 1000;
+  }
+  #register{
+    z-index: 10001;
+  }
+  #auth {
+    background: url("../images/collection/AventadorLP780_mOBILE-2.png") no-repeat center;
+    background-size: cover;
+
+  }
+
+  #auth .login-heading h1 {
+    font-size: 3rem;
+  }
+
+  #login-carousel .carousel-caption {
+    height: 20rem;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #login-carousel .carousel-item img {
+    position: relative;
+  }
+
+  .form-login {
+    margin-right: 12px;
+  }
+
+  #content .home__content--left,
+  #content .home__content--right {
+    display: flex;
+    bottom: 0;
+  }
+
+  #content .home__content--left p,
+  #content .home__content--right p {
+    font-size: 1rem;
+  }
+
+  #content .home__content--left .main-heading,
+  #content .home__content--right .main-heading {
+    font-size: 2rem;
+  }
+
+  /* header */
+
+  .header {
+    padding: 12px 0;
+  }
+
+  .header-logo-brand img {
+    height: 50px;
+  }
+
+  /* navbar - small responsive */
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 0;
+    right: 50%;
+  }
+
+  .toggle-button {
+    display: inline-block;
+  }
+
+  .toggle-button .btn-light {
+    background-color: transparent;
+    border: 2px solid var(--color-yellow-main);
+  }
+
+  .toggle-button i {
+    color: var(--color-yellow-main);
+  }
+
+  .navbar {
+    overflow: scroll;
+  }
+
+  .navbar .dropdown {
+    border-radius: 6px;
+    overflow: scroll;
+    background-color: #ccc;
+  }
+
+  .navbar .nav-item-link {
+    color: #fff;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .header {
+    padding: 12px 0;
+  }
+
+  .header-info {
+    font-size: 1rem;
+    padding: 1rem;
+
+  }
+
+  .header-logo-brand img {
+    height: 50px;
+  }
+
+  .inventory-banner .inventory-heading-main {
+    font-size: 3rem;
+  }
+
+  .inventory-banner .inventory-heading-sub {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .navbar {
+    height: 90px;
+    overflow: scroll;
+  }
+
+  #content .home__content--left,
+  #content .home__content--right {
+    height: 100px;
+  }
+
+  #content .home__content--left p,
+  #content .home__content--right p {
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .form-login #login,
+  .form-login #signup {
+    width: 350px;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+}
+
+.login-heading h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#login,
+#signup {
+  height: 700px;
+  width: 400px;
+  background-color: hsla(0, 0%, 100%, 0.6);
+  backdrop-filter: saturate(200%) blur(25px);
+  border-radius: 12px;
+  margin-top: 24px;
+}
+
+#login-carousel .carousel-caption {
+  text-align: left;
+}
+
+.input-item {
+  position: relative;
+}
+
+.input-item input {
+  /* outline: none; */
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1.5rem;
+}
+
+.input-item input:valid~label,
+.input-item input:focus~label {
+  transform: translate(12px, -25px);
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: hsla(0, 0%, 100%, 0.6);
+  backdrop-filter: saturate(200%) blur(25px);
+  border-radius: 6px;
+  padding: 0 12px;
+}
+
+.input-item input:focus {
+  outline: 1px solid #000;
+  box-shadow: 1px 6px 10px 5px hsla(0, 0%, 100%, 0.6);
+}
+.invalid{
+  outline: 1px solid rgb(255, 37, 37);
+}
+.input-item label {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 1.5rem;
+  left: 1.5rem;
+  transition: 0.2s linear;
+}
+
+#loginbtn {
+  width: 100%;
+  background: rgb(255, 177, 0);
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.create-acc {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.create-acc button {
+  border: 2px solid var(--color-yellow-main);
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.save-profile {
+  font-size: 1.5rem;
 }
 
 @keyframes dynamic-border {
