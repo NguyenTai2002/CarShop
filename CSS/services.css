@@ -1,0 +1,55 @@
+.page-header {
+    position: relative;
+}
+
+.slider-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #fff;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-12 {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    color: #fff;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.tt-left {
+    background-color: rgb(238, 238, 238);
+    width: 50%;
+    height: 600px;
+    float: left;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.tt-right {
+    background-color: rgb(238, 238, 238);
+    width: 50%;
+    height: 600px;
+    float: right;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
