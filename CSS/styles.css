@@ -5,68 +5,57 @@ body .container-fluid {
 .header {
   display: grid;
   grid-template-columns: [first] 20% auto [last] 20%;
-  padding: 24px 0;
-  position: relative;
-
+  /* padding: 6px 0; */
+ 
 }
 
 #header {
-  background-color: transparent;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 100;
+  background-color: transparent;
+  backdrop-filter: saturate(200%) blur(25px);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  
 }
-
+#header > .container{
+  
+}
 .header-logo-brand {
   text-align: center;
   margin: 0 auto;
 }
 
 .header-info {
-  margin-right: 0;
-  position: absolute;
-  right: 0;
   background-color: transparent;
   font-size: 1.5rem;
-  padding: 1rem;
+  justify-self: end;
   transition: all 0.35s ease-out;
+  max-width: fit-content;
 }
-
+.header-info-tel,
+.header-info-tel:hover{
+  text-decoration: none;
+}
 .header-info:hover .header-info-tel::before {
   content: "0867-505-250";
-  position: absolute;
-  width: 200px;
+   width: 200px;
   text-align: left;
   top: 50px;
   right: 0;
   color: var(--color-white-main);
   padding: 0 12px;
-  border: 2px solid var(--color-yellow-main);
+  border: 2px solid black;
   border-radius: 5px;
   font-size: 1.5rem;
-}
-
-.header-info:hover .header-info-tel::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  top: 40px;
-  height: 12px;
-  right: 0;
-}
-
-.header-info-tel>i {
-  color: var(--color-white-main);
 }
 
 .navbar {
   position: relative;
   transition: all 0.35s linear;
-  backdrop-filter: saturate(200%) blur(25px);
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  
 }
 
 .nav-list {
@@ -383,7 +372,9 @@ footer>.container {
   .header-logo-brand img {
     height: 50px;
   }
-
+  .header-info{
+    height: 36px;
+  }
   /* navbar - small responsive */
 
   .nav-list {
@@ -434,7 +425,6 @@ footer>.container {
   .header-info {
     font-size: 1rem;
     padding: 1rem;
-
   }
 
   .header-logo-brand img {
