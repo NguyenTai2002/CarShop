@@ -104,7 +104,7 @@ $(document).ready(function () {
             if (!handleLogin()) {
                   alert("Please enter");
             }else{
-                  window.location.href = '../HTML/index.html';
+                  window.location.href = '../index.html';
             }
       });
       $("#signup").click(function(e) {
