@@ -15,14 +15,13 @@ body .container-fluid {
   right: 0;
   left: 0;
   z-index: 100;
-  background-color: transparent;
+  padding: 6px 0;
+  /* background-color: transparent; */
+  background-image: radial-gradient(circle 610px at 5.2% 51.6%, rgba(5, 8, 114, 1) 0%, rgba(7, 3, 53, 1) 97.5%);
   backdrop-filter: saturate(200%) blur(25px);
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  
 }
-#header > .container{
-  
-}
+
 .header-logo-brand {
   text-align: center;
   margin: 0 auto;
@@ -64,6 +63,7 @@ body .container-fluid {
   justify-content: space-between;
   list-style: none;
   transition: all 0.35s linear;
+  position: relative;
 }
 
 .navbar ul {
@@ -75,7 +75,9 @@ body .container-fluid {
 .dropdown {
   display: none;
 }
-
+.dropdown > .nav-item{
+  padding: 4px 8px;
+}
 .nav-item:hover>.dropdown {
   display: block;
 }
@@ -91,7 +93,7 @@ body .container-fluid {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
-  color: #000;
+  color: #ffffff;
   transition: all 0.35s ease-out;
 }
 
@@ -193,11 +195,30 @@ body .container-fluid {
 .product-price {
   font-size: 3rem;
   line-height: 1;
+  border-bottom: 1px solid #000033;
+}
+.product-spec-list{
+  padding: 24px 0;
+}
+.product-spec{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 6px 0;
+  color: #000033;
+}
+.product-spec >p{
+  font-size: 1.5rem;
 
 }
-
+.product-spec .product-svg,
+.product-spec p{
+  margin: 0;
+  padding: 0;
+}
 .product-name{
   font-size: 4rem;
+  font-weight: 700;
   color: #000;
   font-family: 'montserrat', sans-serif;
   text-decoration: none;
@@ -221,10 +242,13 @@ body .container-fluid {
 }
 .desc {
   padding: 3rem 0;
+  margin: auto;
+  text-align: justify;
 }
 
 .product-desc {
   font-size: 2rem;
+  margin: 0;
 }
 
 .product-btn button {
@@ -241,6 +265,7 @@ body .container-fluid {
 .product-content-detail {
   position: relative;
   /* height: 350px; */
+  color: #000033;
 }
 .product-svg{
   width: auto;
@@ -251,7 +276,6 @@ body .container-fluid {
 
 
 /**************************************** footer*********************************/
-
 footer>.container {
   padding: 36px 0;
 }
@@ -299,6 +323,15 @@ footer>.container {
   top: 0;
 }
 
+@media (max-width: 992px) and (min-width: 768px) {
+  .nav-item {
+    padding: 18px 6px;
+  }
+  .product-name-card{
+    font-size: 2.5rem;
+  }
+}
+
 @media (min-width:768px) {
   #video-bg {
     width: 100%;
@@ -307,6 +340,9 @@ footer>.container {
 }
 
 @media (max-width:768px) {
+    #banner {
+        margin-top: 105px;
+      }
   #video-bg {
     width: auto;
     height: 100vh;
@@ -315,16 +351,16 @@ footer>.container {
 
   .div {
     position: absolute;
-    top: 74px;
+    top: 79px;
     width: 100%;
-    overflow: scroll;
     z-index: 1000;
   }
+
   #register{
     z-index: 10001;
   }
   #auth {
-    background: url("../images/collection/AventadorLP780_mOBILE-2.png") no-repeat center;
+    background: url("../images/home-bg/contact_us_hero_01_m.webp") no-repeat center;
     background-size: cover;
 
   }
@@ -379,12 +415,15 @@ footer>.container {
 
   .nav-list {
     flex-direction: column;
+    justify-content: end;
+    border-radius: 0 0 6px 6px;
+    background-image: linear-gradient(111.4deg, rgba(7, 7, 9, 1) 6.5%, rgba(27, 24, 113, 1) 93.2%);
   }
 
   .dropdown {
     position: absolute;
     top: 0;
-    right: 50%;
+    left: 150px;
   }
 
   .toggle-button {
@@ -400,20 +439,24 @@ footer>.container {
     color: var(--color-yellow-main);
   }
 
-  .navbar {
-    overflow: scroll;
-  }
-
   .navbar .dropdown {
     border-radius: 6px;
     overflow: scroll;
-    background-color: #ccc;
+    background-color: transparent;
   }
 
   .navbar .nav-item-link {
     color: #fff;
   }
-
+    .product-content-detail{
+      height: 490px;
+    }
+    .product-name{
+      font-size: 3rem;
+    }
+        .product-name-card {
+          font-size: 2.5rem;
+        }
 }
 
 @media (max-width: 576px) {
@@ -430,7 +473,9 @@ footer>.container {
   .header-logo-brand img {
     height: 50px;
   }
-
+  .inventory-banner{
+    padding: 24px 12px;
+  }
   .inventory-banner .inventory-heading-main {
     font-size: 3rem;
   }
@@ -438,11 +483,19 @@ footer>.container {
   .inventory-banner .inventory-heading-sub {
     font-size: 1.2rem;
   }
+  .product-detail-item{
+    padding: 0 12px;
+  }
+    .product-detail-item .product-desc{
+      font-size: 1.2rem;
+    }
+        .product-name-card {
+          font-size: 2rem;
+        }
 }
 
 @media (max-width: 376px) {
   .navbar {
-    height: 90px;
     overflow: scroll;
   }
 
@@ -476,6 +529,9 @@ footer>.container {
 #signup {
   height: 700px;
   width: 400px;
+  color: #000033;
+  font-weight: 500;
+  font-family: 'poppins';
   background-color: hsla(0, 0%, 100%, 0.6);
   backdrop-filter: saturate(200%) blur(25px);
   border-radius: 12px;
@@ -516,6 +572,9 @@ footer>.container {
 .invalid{
   outline: 1px solid rgb(255, 37, 37);
 }
+.success{
+  outline: 1px solid rgb(0, 215, 0);
+}
 .input-item label {
   position: absolute;
   font-size: 1.5rem;
@@ -524,7 +583,8 @@ footer>.container {
   transition: 0.2s linear;
 }
 
-#loginbtn {
+#loginbtn ,
+#signupbtn{
   width: 100%;
   background: rgb(255, 177, 0);
   font-size: 2rem;
@@ -547,6 +607,14 @@ footer>.container {
 
 .save-profile {
   font-size: 1.5rem;
+}
+
+.contact-heading{
+  padding: 2rem 0;
+
+}
+.contact-form{
+  color: #000033;
 }
 
 @keyframes dynamic-border {

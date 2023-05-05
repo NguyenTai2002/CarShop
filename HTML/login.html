@@ -82,12 +82,12 @@
                                     <img src="../images/logo/logo-brand.png" alt="" class="logo-login">
                                     <h2>Welcome to Lamborghinimontreal</h2>
                               </div>
-                              <form action="post" class="text-center mt-5">
+                              <form action="submit" class="text-center mt-5">
                                     <p class="h4 mb-5">Please login to your account</p>
                                     <div class="d-flex flex-column mb-4 input-item form-group">
-                                          <input class="w-100 mb-3" type="text" id="username" onchange="" required>
+                                          <input class="w-100 mb-3" type="text" id="username"  required>
                                           <label for="username">Username or email</label>
-                                          <span id="input-message "></span>
+                                          <span id="input-message"></span>
                                     </div>
                                     <div class="d-flex flex-column mb-4 input-item form-group">
                                           <input class="w-100 mb-3" type="password" id="password" required>
@@ -113,14 +113,14 @@
                                     <img src="../images/logo/logo-brand.png" alt="" class="logo-login">
                                     <h2>Welcome to Lamborghinimontreal</h2>
                               </div>
-                              <form action="post" class="text-center mt-5">
+                              <form action="submit" class="text-center mt-5">
                                     <p class="h4 mb-5">Please fill information to create account</p>
                                     <div class="row">
                                           <div class="col">
                                                 <div class="d-flex flex-column mb-4 input-item form-group">
                                                       <input class="w-100 mb-3" type="text" id="fName" required>
-                                                      <label for="fName">First name</label>
-                                                      <span id="input-message"></span>
+                                                      <label for="fName" class="">First name</label>
+                                                      <span id="inputFname-message"></span>
                                                 </div>
                                           </div>
                                           <div class="col">
@@ -132,26 +132,31 @@
                                           </div>
                                     </div>
                                     <div class="d-flex flex-column mb-4 input-item form-group">
-                                          <input class="w-100 mb-3" type="text" id="signup-username" required>
-                                          <label for="username">Username or email</label>
+                                          <input class="w-100 mb-3" type="text" id="signup-email" required>
+                                          <label for="signup-email">Email</label>
                                           <span id="input-message"></span>
                                     </div>
                                     <div class="d-flex flex-column mb-4 input-item form-group">
-                                          <input class="w-100 mb-3" type="password" id="password" required>
+                                          <input class="w-100 mb-3" type="text" id="signup-username" required>
+                                          <label for="signup-username">Username</label>
+                                          <span id="input-message"></span>
+                                    </div>
+                                    <div class="d-flex flex-column mb-4 input-item form-group">
+                                          <input class="w-100 mb-3" type="password" id="signup-password" required>
                                           <label for="password">Password</label>
                                           <span id="input-message "></span>
                                     </div>
                                     <div class="d-flex flex-column mb-4 input-item form-group">
                                           <input class="w-100 mb-3" type="password" id="re-signup-password" required>
-                                          <label for="password">Confirm Password</label>
+                                          <label for="re-signup-password">Confirm Password</label>
                                           <span id="input-message"></span>
                                     </div>
                               </form>
                               <div>
-                                    <button type="submit" class="btn mb-4" id="loginbtn">SIGN UP</button>
+                                    <button type="submit" class="btn mb-4" id="signupbtn">SIGN UP</button>
                               </div>
                               <div class="save-profile">
-                                    <input type="checkbox">
+                                    <input type="checkbox" checked>
                                     <label for="">Subscribe to our newsletter</label>
                               </div>
                               <div class="create-acc">
