@@ -285,7 +285,13 @@ footer>.container {
 .footer-col ul li {
   border: none;
 }
-
+.list-group-link{
+  text-decoration: none;
+  color: #000033;
+}
+.list-group-link:hover{
+  text-decoration: none;
+}
 .footer-col .card-header {
   background: #fff;
   border: none;
@@ -626,4 +632,19 @@ footer>.container {
     width: 100%;
     height: 1px;
   }
+}
+
+
+
+.team{
+  padding: 36px 0;
+}
+.member-img{
+  height: 90%;
+  border-radius: 12px;
+}
+.member-info{
+  font-size: 3rem;
+  color: #000033;
+  list-style: none;
 }
