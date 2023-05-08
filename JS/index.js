@@ -1,6 +1,7 @@
 $(document).ready(function () {
       let regexEmail = /^(?:[A-Z\d][A-Z\d_-]{5,10}|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
       let regexName = /^[a-z ,.'-]+$/i;
+      let regexUserName = /^[A-Za-z][A-Za-z0-9_]{4,}$/;
       let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{7,}$/;
       
       let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -17,7 +18,7 @@ $(document).ready(function () {
             return false;
       }
       $("#register").click(function () {
-            window.location.href = "../HTML/login.html"
+            window.location.href = "./HTML/login.html"
       });
 
       $("#signup").hide(350);
@@ -32,7 +33,7 @@ $(document).ready(function () {
       });
 
       $("#username").focus(function () {
-            $("input[type=text]").attr("placeholder", "Phone or Email address")
+            $("input[type=text]").attr("placeholder", "Username")
             $("#username").blur(function () {
                   $("input[type=text]").attr("placeholder", "")
             })
@@ -92,7 +93,7 @@ $(document).ready(function () {
                   $("input[id='signup-email']").addClass("invalid")
                   return false
             }
-            if (username !== "" && regexName.test(username)) {
+            if (username !== "" && regexUserName.test(username)) {
                   $("input[id='signup-username']").addClass("success")
             } else {
                   $("input[id='signup-username']").addClass("invalid")
