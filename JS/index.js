@@ -17,10 +17,6 @@ $(document).ready(function () {
             }
             return false;
       }
-      $("#register").click(function () {
-            window.location.href = "./HTML/login.html"
-      });
-
       $("#signup").hide(350);
       $("#create-new").click(function () {
             $("#signup").toggle(350);
