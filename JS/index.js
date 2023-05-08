@@ -1,8 +1,21 @@
 $(document).ready(function () {
       let regexEmail = /^(?:[A-Z\d][A-Z\d_-]{5,10}|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
       let regexName = /^[a-z ,.'-]+$/i;
-      let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-
+      let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{7,}$/;
+      
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      function userExists(username, email) {
+            let users = JSON.parse(localStorage.getItem("users"));
+            if (!users) {
+                  return false;
+            }
+            for (let i = 0; i < users.length; i++) {
+                  if (users[i].username === username || users[i].email === email) {
+                        return true;
+                  }
+            }
+            return false;
+      }
       $("#register").click(function () {
             window.location.href = "../HTML/login.html"
       });
@@ -34,25 +47,14 @@ $(document).ready(function () {
                   $("input[id='password']").addClass("invalid");
                   return false;
             }
-
-            if (!regexName.test($("#username").val())) {
-                  $("input[id='username'] ~ span").html("Wrong username or email");
-                  $("input[id='username']").addClass("invalid");
-                  console.log("checked username");
-                  if (!regexPassword.test($("#password").val())) {
-                        $("input[id='password'] ~ span").html("Wrong password");
-                        $("input[id='password']").addClass("invalid");
-                        console.log("checked password");
-                        return false;
-                  }
-            } else {
-                  $("input[id='username'] ~ span").html("Accepted !");
-                  $("input[id='username']").addClass("success");
-                  $("input[id='password'] ~ span").html("Accepted !");
-                  $("input[id='password']").addClass("success");
-                  console.log("User accepted");
+            const user = users.find(function(user){
+                  return user.username == username && user.password == password;
+            })
+            if(user){
+                  alert("Login successful")
+                  return true;
             }
-            return true
+            // return true
       }
 
       function handleSignup(){
@@ -61,53 +63,70 @@ $(document).ready(function () {
             let email =$("input[id='signup-email']").val();
             let username =$("input[id='signup-username']").val();
             let password =$("input[id='signup-password']").val();
-            let cf_password = $("input[id='']").val();
-
-            if(firstName == "" || lastName == "" || email == "" || username == "" || password == "" || cf_password == ""){
-                  $("#signup span").text("Please enter your information")
-                  $("input[id='fName']").addClass("invalid")
-                  $("input[id='lName']").addClass("invalid")
-                  $("input[id='signup-email']").addClass("invalid")
-                  $("input[id='signup-username']").addClass("invalid")
-                  $("input[id='signup-password']").addClass("invalid")
-                  return false;
+            let cf_password = $("input[id='re-signup-password']").val();
+            let user = {
+                  username: username,
+                  password: password,
+                  email: email,
+                  history:[],
             }
-            if(!regexName.test(firstName)){
-                  $("input[id='fName']").addClass("invalid")
-                  if(!regexName.test(lastName)){
-                        $("input[id='lName']").addClass("invalid")
-                        if(!regexEmail.test(email)){
-                              $("input[id='signup-'email]").addClass("invalid")
-                              if(!regexName.test(username)){
-                                    $("input[id='signup-username']").addClass("invalid")
-                                    if(!regexPassword.test(password)){
-                                          $("input[id='signup-password']").addClass("invalid")
-                                          if((cf_password !== password)){
-                                                $("input[id='re-signup-password']").addClass("invalid")
-                                          }
-                                    }
-                              }
-                        }
-                  }
+            if (userExists(username, email)) {
+                  alert("Already account")
+                  return false
+            }
+            if(firstName !== "" && regexName.test(firstName)){
+                  $("input[id='fName']").addClass("success")
             }else{
-                  $("#signup span").text("")
-                  $("#signup input").removeClass("invalid")
-                  $("#signup input").toggleClass("success")
-                  return true
+                  $("input[id='fName']").addClass("invalid")
+                  return false
             }
-      }
-      $("#signup input").change(handleSignup)
-      $("#login input").change(handleLogin);
+            if (lastName !== "" && regexName.test(lastName)) {
+                  $("input[id='lName']").addClass("success")
+            } else {
+                  $("input[id='lName']").addClass("invalid")
+                  return false
+            }
+            if (email !== "" && regexEmail.test(email)) {
+                  $("input[id='signup-email']").addClass("success")
+            } else {
+                  $("input[id='signup-email']").addClass("invalid")
+                  return false
+            }
+            if (username !== "" && regexName.test(username)) {
+                  $("input[id='signup-username']").addClass("success")
+            } else {
+                  $("input[id='signup-username']").addClass("invalid")
+                  return false
+            } if (password !== "" && regexPassword.test(password)) {
+                  $("input[id='signup-password']").addClass("success")
+            } else {
+                  $("input[id='signup-password']").addClass("invalid")
+                  return false
+            } if (cf_password === password) {
+                  $("input[id='re-signup-password']").addClass("success")
+                  $("input[id='re-signup-password'] ~ span").text("")
+            } else {
+                  $("input[id='re-signup-password']").addClass("invalid")
+                  $("input[id='re-signup-password']").removeClass("success")
+                  $("input[id='re-signup-password'] ~ span").text("Không trùng")
+                  return false
+            }
 
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users))
+            return true;
+      }
+      // $("#signup input").blur(handleSignup);
+      // $("#login input").change(handleLogin);
       $("#loginbtn").click(function (e) {
             e.preventDefault();
             if (!handleLogin()) {
-                  alert("Please enter");
+                  alert("Wrong username or password");
             }else{
                   window.location.href = '../index.html';
             }
       });
-      $("#signup").click(function(e) {
+      $("#signupbtn").click(function(e) {
             e.preventDefault();
             if (!handleSignup()) {
                   alert("Please enter");
