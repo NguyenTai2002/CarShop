@@ -244,6 +244,8 @@ $(document).ready(function () {
                   email: email,
                   history:[],
             }
+
+            //check existing account on signup page
             if (userExists(username, email)) {
                   alert("Already account")
                   return false
@@ -450,7 +452,7 @@ function isLoggedIn() {
 }
 function logout(){
       localStorage.removeItem("currentUser")
-      window.location.href = '../HTML/login.html';
+      window.location.href = './HTML/login.html';
       return true;
 }
 function logging(){
