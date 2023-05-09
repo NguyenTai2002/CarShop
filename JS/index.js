@@ -452,7 +452,7 @@ function isLoggedIn() {
 }
 function logout(){
       localStorage.removeItem("currentUser")
-      window.location.href = './HTML/login.html';
+      window.location.href = '../HTML/login.html';
       return true;
 }
 function logging(){
