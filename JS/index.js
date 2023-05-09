@@ -472,7 +472,7 @@ $(document).ready(function() {
       })
       $(document).on("click", "#addCart", function(e){
             e.preventDefault();
-            if(!(logging())){
+            if((logging())){
                   $(document).on("click", "#addCart", function(){
                         const users = JSON.parse(localStorage.getItem("users"));
                         
