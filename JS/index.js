@@ -1,3 +1,181 @@
+const products = [
+      {
+            id: 1,
+            name: "AVENTADOR LP 780-4 ULTIMAE",
+            price: "799998",
+            odo: "97",
+            image: "../images/products/product1.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "7-Speed ISR",
+            engine: "12 Cyl - 6.5 L",
+            year: "2022",
+            doors: "2D Coupe",
+            passenger: "2",
+            description: "Lamborghini Montreal proudly offers this beautiful 2022 Lamborghini Aventador Ultimae in Verde Turbine over a Nero Ade/Arancio Leon interior with 97 miles. The Aventador Ultimae is powered by a 6.5L V12 engine producing 769 hp and 531 lb-ft of torque through a 7-Speed Automatic Transmission ",
+
+      },
+      {
+            id: 2,
+            name: "LAMBORGHINI URUS ",
+            price: "269998",
+            odo: "6,073",
+            image: "../images/products/product2.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "8 Cyl - 4.0 L",
+            year: "2021",
+            doors: "4D Sport Utility",
+            passenger: "5",
+            description: "Lamborghini Montreal proudly offers this beautiful 2021 Lamborghini Urus in Blu Eleos over a Nero Ade interior with 6,073 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 640 hp and 627 lb-ft of torque through through an 8-Speed Automatic Transmission.",
+      },
+      {
+            id: 3,
+            name: "LAMBORGHINI URUS ",
+            price: "224998",
+            odo: "25,344",
+            image: "../images/products/product3.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "8 Cyl - 4.0 L",
+            year: "2020",
+            doors: "4D Sport Utility",
+            passenger: "5",
+            description: "Lamborghini Montreal proudly offers this beautiful 2020 Lamborghini Urus in Nero Noctis over a Nero Ade interior with 25,344 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 641 hp and 626 lb-ft of torque through through an 8-Speed Automatic Transmission.",
+      },
+      {
+            id: 4,
+            name: "AVENTADOR LP 780-4 ULTIMAE",
+            price: "969998",
+            odo: "95",
+            image: "../images/products/product4.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "12 Cyl - 6.5 L",
+            year: "2022",
+            doors: "2D Convertible",
+            passenger: "2",
+            description: "Lamborghini Montreal proudly offers this beautiful 2022 Lamborghini Aventador LP 780-4 Ultimae in Bianco Monocerus over a Nero Ade/Rosso Alala interior with 95 miles. The Aventador LP 780-4 Ultimae is powered by a 6.5L V12 engine producing 769 hp and 531 lb-ft of torque through through a 7-Speed Automatic Transmission.",
+      },
+      {
+            id: 5,
+            name: "HURACAN LP580- 2S",
+            price: "239998",
+            odo: "7,403",
+            image: "../images/products/product5.webp",
+            propulsion: "RWD",
+            transmission: "Automatic",
+            engine: "10 Cyl - 5.2 L",
+            year: "2017",
+            doors: "2D Convertible",
+            passenger: "2",
+            description: "Lamborghini Montreal proudly offers this beautiful 2017 Lamborghini Huracan LP580-2S in Rosso Mars (Red) over a Nero Ade (Black) interior with 7,403 miles. This Huracan LP580-2S is powered by a 5.2L V10 engine producing 580 hp and 397 lb-ft of torque through a 7-Speed Automatic Transmission.",
+      },
+      {
+            id: 6,
+            name: "LAMBORGHINI URUS ",
+            price: "259998",
+            odo: "11,714",
+            image: "../images/products/product6.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "8 Cyl - 4.0 L",
+            year: "2021",
+            doors: "4D Sport Utility",
+            passenger: "5",
+            description: "Lamborghini Montreal proudly offers this beautiful 2021 Lamborghini Urus in Giallo Auge over a Nero Ade interior with 11,641 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 641 hp and 627 lb-ft of torque through through an 8-speed Automatic Transmission.",
+      },
+      {
+            id: 7,
+            name: "LAMBORGHINI URUS ",
+            price: "314998",
+            odo: "6,338",
+            image: "../images/products/product7.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "8 Cyl - 4.0 L",
+            year: "2022",
+            doors: "4D Sport Utility",
+            passenger: "5",
+            description: "Lamborghini Montreal proudly offers this beautiful 2022 Lamborghini Urus in Bianco Monocerus Metallic over a Nero Ade interior with 6,338 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 641 hp and 626 lb-ft of torque through through an 8-Speed Automatic Transmission.",
+      },
+      {
+            id: 8,
+            name: "LAMBORGHINI GALLARDO ",
+            price: "159998",
+            odo: "6,569",
+            image: "../images/products/product8.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Manual",
+            engine: "10 Cyl - 5.0L",
+            year: "2008",
+            doors: "4D Sport Utility",
+            passenger: "2",
+            description: "Lamborghini Montreal proudly offers this beautiful 2008 Lamborghini Gallardo in Orange over a Black interior with 6,569 miles. This Gallardo is powered by a 5.0L V10 engine producing 512 hp and 376 lb-ft of torque through a 6-Speed Manual Transmission w/ E-Gear Shifting.",
+      },
+      {
+            id: 9,
+            name: "ROLLS-ROYCE CULLINAN",
+            price: "329998",
+            odo: "18,842",
+            image: "../images/products/product9.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "12 Cyl - 6.75 L",
+            year: "2020",
+            doors: "4D Sport Utility",
+            passenger: "5",
+            description: "Rolls-Royce Motor Cars North Montreal is proud to offer this beautiful 2020 Rolls-Royce Cullinan in Darkest Tungsten over a Seashell interior with 18,842 miles. The Cullinan is powered by a 6.75L Twin-Turbocharged V12 engine producing 571 hp and 627 lb-ft of torque through an 8-Speed Automatic Transmission.",
+      },
+      {
+            id: 10,
+            name: "ROLLS-ROYCE GHOST",
+            price: "329998",
+            odo: "3,025",
+            image: "../images/products/product10.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "12 Cyl - 6.75 L",
+            year: "2021",
+            doors: "4D Sport Utility",
+            passenger: "5",
+            description: "Rolls-Royce Motor Cars North Montreal is proud to offer this beautiful 2021 Rolls-Royce Ghost in Graphite over a Seashell interior with 3,025 miles. The Ghost is powered by a 6.75L Twin-Turbocharged V12 engine producing 563 hp and 627 lb-ft of torque through an 8-Speed Automatic Transmission.",
+      },
+      {
+            id: 11,
+            name: "MCLAREN 765LT SPIDER",
+            price: "639998",
+            odo: "4,010",
+            image: "../images/products/product11.webp",
+            propulsion: "RWD",
+            transmission: "Manual",
+            engine: "8 Cyl - 8 L",
+            year: "2022",
+            doors: "2D Convertible",
+            passenger: "2",
+            description: "McLaren Montreal is proud to offer this 2022 McLaren 765LT in Elite - Ambit Blue over a Black interior with 4,002 miles. The 765LT is powered by a 4.0L Twin-Turbocharged V8 engine producing 755 hp and 590 lb-ft of torque through a 7-Speed Dual Clutch Automatic Transmission. ",
+      },
+      {
+            id: 12,
+            name: "PORSCHE TAYCAN TURBO S",
+            price: "157991",
+            odo: "4,141",
+            image: "../images/products/product12.webp",
+            propulsion: "All-wheel-drive",
+            transmission: "Automatic",
+            engine: "AC Permanent Synchronous Motors",
+            year: "2022",
+            doors: "Sedan",
+            passenger: "4+1",
+            description: "Porsche North Montreal proudly offers this beautiful Certified Pre-Owned 2022 Porsche Taycan Turbo S in Carrara White Metallic over a Black interior with 4,141 miles. The Taycan Turbo S is powered by an AC Permanent Synchronous Motors engine producing 750 hp and 774 lb-ft of torque through a 2-Speed Automatic Transmission.",
+      }
+
+]
+
+
+
+
+
+
 $(document).ready(function () {
       let regexEmail = /^(?:[A-Z\d][A-Z\d_-]{5,10}|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
       let regexName = /^[a-z ,.'-]+$/i;
@@ -34,11 +212,9 @@ $(document).ready(function () {
                   $("input[type=text]").attr("placeholder", "")
             })
       });
-
       function handleLogin() {
             let username = $("#username").val();
             let password = $("#password").val();
-
             if (username == "" || password == "") {
                   $("input[id='username']").addClass("invalid");
                   $("input[id='password']").addClass("invalid");
@@ -47,13 +223,14 @@ $(document).ready(function () {
             const user = users.find(function(user){
                   return user.username == username && user.password == password;
             })
+
             if(user){
                   alert("Login successful")
+                  localStorage.setItem("currentUser", JSON.stringify(user));
                   return true;
             }
             // return true
       }
-
       function handleSignup(){
             let firstName =$("input[id='fName']").val();
             let lastName =$("input[id='lName']").val();
@@ -123,6 +300,10 @@ $(document).ready(function () {
                   window.location.href = '../index.html';
             }
       });
+      $("#pass").click(function (e) {
+            e.preventDefault();
+            window.location.href = '../index.html';
+      })
       $("#signupbtn").click(function(e) {
             e.preventDefault();
             if (!handleSignup()) {
@@ -146,181 +327,6 @@ $(document).ready(function ToggleNav() {
       })
 })
 $(document).ready(function () {
-
-      const products = [
-            {
-                  id: 1,
-                  name: "AVENTADOR LP 780-4 ULTIMAE",
-                  price: "799,998",
-                  odo: "97",
-                  image: "../images/products/product1.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "7-Speed ISR",
-                  engine: "12 Cyl - 6.5 L",
-                  year: "2022",
-                  doors: "2D Coupe",
-                  passenger: "2",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2022 Lamborghini Aventador Ultimae in Verde Turbine over a Nero Ade/Arancio Leon interior with 97 miles. The Aventador Ultimae is powered by a 6.5L V12 engine producing 769 hp and 531 lb-ft of torque through a 7-Speed Automatic Transmission ",
-
-            },
-            {
-                  id: 2,
-                  name: "LAMBORGHINI URUS ",
-                  price: "269,998",
-                  odo: "6,073",
-                  image: "../images/products/product2.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "8 Cyl - 4.0 L",
-                  year: "2021",
-                  doors: "4D Sport Utility",
-                  passenger: "5",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2021 Lamborghini Urus in Blu Eleos over a Nero Ade interior with 6,073 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 640 hp and 627 lb-ft of torque through through an 8-Speed Automatic Transmission.",
-            },
-            {
-                  id: 3,
-                  name: "LAMBORGHINI URUS ",
-                  price: "224,998",
-                  odo: "25,344",
-                  image: "../images/products/product3.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "8 Cyl - 4.0 L",
-                  year: "2020",
-                  doors: "4D Sport Utility",
-                  passenger: "5",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2020 Lamborghini Urus in Nero Noctis over a Nero Ade interior with 25,344 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 641 hp and 626 lb-ft of torque through through an 8-Speed Automatic Transmission.",
-            },
-            {
-                  id: 4,
-                  name: "AVENTADOR LP 780-4 ULTIMAE",
-                  price: "969,998",
-                  odo: "95",
-                  image: "../images/products/product4.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "12 Cyl - 6.5 L",
-                  year: "2022",
-                  doors: "2D Convertible",
-                  passenger: "2",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2022 Lamborghini Aventador LP 780-4 Ultimae in Bianco Monocerus over a Nero Ade/Rosso Alala interior with 95 miles. The Aventador LP 780-4 Ultimae is powered by a 6.5L V12 engine producing 769 hp and 531 lb-ft of torque through through a 7-Speed Automatic Transmission.",
-            },
-            {
-                  id: 5,
-                  name: "HURACAN LP580- 2S",
-                  price: "239,998",
-                  odo: "7,403",
-                  image: "../images/products/product5.webp",
-                  propulsion: "RWD",
-                  transmission: "Automatic",
-                  engine: "10 Cyl - 5.2 L",
-                  year: "2017",
-                  doors: "2D Convertible",
-                  passenger: "2",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2017 Lamborghini Huracan LP580-2S in Rosso Mars (Red) over a Nero Ade (Black) interior with 7,403 miles. This Huracan LP580-2S is powered by a 5.2L V10 engine producing 580 hp and 397 lb-ft of torque through a 7-Speed Automatic Transmission.",
-            },
-            {
-                  id: 6,
-                  name: "LAMBORGHINI URUS ",
-                  price: "259,998",
-                  odo: "11,714",
-                  image: "../images/products/product6.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "8 Cyl - 4.0 L",
-                  year: "2021",
-                  doors: "4D Sport Utility",
-                  passenger: "5",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2021 Lamborghini Urus in Giallo Auge over a Nero Ade interior with 11,641 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 641 hp and 627 lb-ft of torque through through an 8-speed Automatic Transmission.",
-            },
-            {
-                  id: 7,
-                  name: "LAMBORGHINI URUS ",
-                  price: "314,998",
-                  odo: "6,338",
-                  image: "../images/products/product7.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "8 Cyl - 4.0 L",
-                  year: "2022",
-                  doors: "4D Sport Utility",
-                  passenger: "5",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2022 Lamborghini Urus in Bianco Monocerus Metallic over a Nero Ade interior with 6,338 miles. The Urus is powered by a 4.0L Twin-Turbocharged V8 engine producing 641 hp and 626 lb-ft of torque through through an 8-Speed Automatic Transmission.",
-            },
-            {
-                  id: 8,
-                  name: "LAMBORGHINI GALLARDO ",
-                  price: "159,998",
-                  odo: "6,569",
-                  image: "../images/products/product8.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Manual",
-                  engine: "10 Cyl - 5.0L",
-                  year: "2008",
-                  doors: "4D Sport Utility",
-                  passenger: "2",
-                  description: "Lamborghini Montreal proudly offers this beautiful 2008 Lamborghini Gallardo in Orange over a Black interior with 6,569 miles. This Gallardo is powered by a 5.0L V10 engine producing 512 hp and 376 lb-ft of torque through a 6-Speed Manual Transmission w/ E-Gear Shifting.",
-            },
-            {
-                  id: 9,
-                  name: "ROLLS-ROYCE CULLINAN",
-                  price: "329,998",
-                  odo: "18,842",
-                  image: "../images/products/product9.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "12 Cyl - 6.75 L",
-                  year: "2020",
-                  doors: "4D Sport Utility",
-                  passenger: "5",
-                  description: "Rolls-Royce Motor Cars North Montreal is proud to offer this beautiful 2020 Rolls-Royce Cullinan in Darkest Tungsten over a Seashell interior with 18,842 miles. The Cullinan is powered by a 6.75L Twin-Turbocharged V12 engine producing 571 hp and 627 lb-ft of torque through an 8-Speed Automatic Transmission.",
-            },
-            {
-                  id: 10,
-                  name: "ROLLS-ROYCE GHOST",
-                  price: "329,998",
-                  odo: "3,025",
-                  image: "../images/products/product10.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "12 Cyl - 6.75 L",
-                  year: "2021",
-                  doors: "4D Sport Utility",
-                  passenger: "5",
-                  description: "Rolls-Royce Motor Cars North Montreal is proud to offer this beautiful 2021 Rolls-Royce Ghost in Graphite over a Seashell interior with 3,025 miles. The Ghost is powered by a 6.75L Twin-Turbocharged V12 engine producing 563 hp and 627 lb-ft of torque through an 8-Speed Automatic Transmission.",
-            },
-            {
-                  id: 11,
-                  name: "MCLAREN 765LT SPIDER",
-                  price: "639,998",
-                  odo: "4,010",
-                  image: "../images/products/product11.webp",
-                  propulsion: "RWD",
-                  transmission: "Manual",
-                  engine: "8 Cyl - 8 L",
-                  year: "2022",
-                  doors: "2D Convertible",
-                  passenger: "2",
-                  description: "McLaren Montreal is proud to offer this 2022 McLaren 765LT in Elite - Ambit Blue over a Black interior with 4,002 miles. The 765LT is powered by a 4.0L Twin-Turbocharged V8 engine producing 755 hp and 590 lb-ft of torque through a 7-Speed Dual Clutch Automatic Transmission. ",
-            },
-            {
-                  id: 12,
-                  name: "PORSCHE TAYCAN TURBO S",
-                  price: "157,991",
-                  odo: "4,141",
-                  image: "../images/products/product12.webp",
-                  propulsion: "All-wheel-drive",
-                  transmission: "Automatic",
-                  engine: "AC Permanent Synchronous Motors",
-                  year: "2022",
-                  doors: "Sedan",
-                  passenger: "4+1",
-                  description: "Porsche North Montreal proudly offers this beautiful Certified Pre-Owned 2022 Porsche Taycan Turbo S in Carrara White Metallic over a Black interior with 4,141 miles. The Taycan Turbo S is powered by an AC Permanent Synchronous Motors engine producing 750 hp and 774 lb-ft of torque through a 2-Speed Automatic Transmission.",
-            }
-
-      ]
-
-
       function displayProducts(products) {
             let productList = $('#product-list');
             productList.empty();
@@ -354,7 +360,7 @@ $(document).ready(function () {
                                           </div>
                                     <div class="product-btn d-grid gap-3">
                                           <button id="btnBuy" class="btn  btn-warning btn-lg" type="button">Buy</button>
-                                          <button id="btnBuy" class="btn  btn-dark btn-lg" type="button">Add to wish list</button>
+                                          <button id="addCart" class="btn  btn-dark btn-lg" type="button">Add to wish list</button>
                                     </div>
                               </div>
                          </div>
@@ -369,7 +375,6 @@ $(document).ready(function () {
             window.location.href = '../HTML/product-detail.html';
             console.log(productId)
       })
-
       $(document).ready(function () {
             let productId = localStorage.getItem('productId');
             if (productId) {
@@ -425,8 +430,8 @@ $(document).ready(function () {
                                      </div>
                               </div>
                               <div class="product-btn d-grid gap-3">
-                                    <button id="btnBuy" class="btn  btn-warning btn-lg" type="button">Buy</button>
-                                    <button id="addCart" class="btn  btn-dark btn-lg" type="button">Add to wish list</button>
+                                    <button id="btnBuy" class="btn btn-warning btn-lg" type="button">Buy</button>
+                                    <button id="addCart" class="btn btn-dark btn-lg" type="button">Add to wish list</button>
                               </div>
                         </div>
                         <div class="row desc">
@@ -436,10 +441,101 @@ $(document).ready(function () {
             `
             let blockDetail = $(".product-detail-block").html(html)
       }
-
-
       displayProducts(products)
 });
 
+function isLoggedIn() {
+      const user = JSON.parse(localStorage.getItem("users"));
+      return user !== null;
+}
+function logout(){
+      localStorage.removeItem("currentUser")
+      window.location.href = '../HTML/login.html';
+      return true;
+}
+function logging(){
+      if(JSON.parse(localStorage.getItem("currentUser")) == ""){
+            return false
+      }
+}
 
+//handle add to cart 
+$(document).ready(function() {
+      $("#logout").click(function(e){
+            e.preventDefault();
+            logout();
+      })
+      $(".cart-btn").click(function(){
+            $("#cartmodal").modal()
+      })
+      $(document).on("click", "#addCart", function(e){
+            e.preventDefault();
+            if(!(logging())){
+                  $(document).on("click", "#addCart", function(){
+                        const users = JSON.parse(localStorage.getItem("users"));
+                        
+                        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+                        
+                        let product = products[JSON.parse(localStorage.getItem("productId")) - 1]
+                        
+                        currentUser.history.push(product)
+                        localStorage.setItem("currentUser", JSON.stringify(currentUser))
+                        
+                        let currentUserIndex = users.findIndex(function(user){
+                              return user.username === currentUser.username;
+                        })
+                        
+                        users[currentUserIndex] = currentUser
+                        localStorage.setItem("users", JSON.stringify(users))
+                        
+                  })
+            }else{
+                  alert("Bạn phải đăng nhập để thêm sản phẩm vào giỏ hàng")
+                  window.location.href = '../HTML/login.html';
+            }
+      })
+})
+
+//render cart modal
+$(document).ready(function(){
+      let html =''
+      let cartList = $(".cart-table")
+      let productCounts = {}
+      let currentUserHistory = JSON.parse(localStorage.getItem("currentUser")).history
+      console.log(currentUserHistory)
+      for (let i = 0; i < currentUserHistory.length; i++){
+            let product = currentUserHistory[i];
+            if(product.id in productCounts){
+                  productCounts[product.id] += 1;
+            }else{
+                  productCounts[product.id] = 1;
+            }
+      }
+      console.log(productCounts)
+
+      for (let productId in productCounts) {
+            let product = products.find(p => p.id == productId);
+            html += `
+                  <tr>
+                        <td>${product.name}</td>
+                        <td>${product.price} $</td>
+                        <td>${productCounts[productId]}</td>
+                        <td>${productCounts[product.id] * product.price} $</td>
+                        <td> <button class="remove-btn btn btn-danger" data-index="${productId}">Remove</button></td>
+                  </tr>
+            `;
+      }
+
+      cartList.append(html)
+
+      $(document).on("click", ".remove-btn", function () {
+            // let index = $(this).data("index")
+            // currentUserHistory.splice(index, 1)
+            // localStorage.setItem("currentUser", JSON.stringify({ history: currentUserHistory }))
+            // $(this).closest("tr").remove()
+      })
+
+})
+
+//remove product from cart
 

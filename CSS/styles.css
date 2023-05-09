@@ -365,6 +365,9 @@ footer>.container {
   #register{
     z-index: 10001;
   }
+  #register > a{
+    text-decoration: none !important;
+  }
   #auth {
     background: url("../images/home-bg/contact_us_hero_01_m.webp") no-repeat center;
     background-size: cover;
@@ -647,4 +650,22 @@ footer>.container {
   font-size: 3rem;
   color: #000033;
   list-style: none;
+}
+
+
+#cartmodal .modal-body{
+  padding: 0 12px;
+}
+#cartmodal .modal-header h1{
+  margin: auto;
+}
+.cart-table th{
+  font-size: 2rem;
+}
+.cart-table td{
+  font-size: 1.5rem;
+}
+.remove-btn{
+  outline: none;
+  color: red;
 }
