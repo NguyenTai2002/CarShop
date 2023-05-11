@@ -178,6 +178,7 @@ const products = [
 
 $(document).ready(function () {
       let regexEmail = /^(?:[A-Z\d][A-Z\d_-]{5,10}|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
+      // let regexEmail =/^ [a - zA - Z0 -9_. + -] + @gmail\.com$/
       let regexName = /^[a-z ,.'-]+$/i;
       let regexUserName = /^[A-Za-z][A-Za-z0-9_]{4,}$/;
       let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{7,}$/;
@@ -324,7 +325,6 @@ $(document).ready(function ToggleNav() {
             $("#nav-collapse").toggle()
             $("button[id='toggle']").blur(function () {
                   $("#nav-collapse").hide()
-
             })
       })
 })
@@ -455,20 +455,22 @@ function logout(){
       window.location.href = '../HTML/login.html';
       return true;
 }
-function logging(){
-      if(JSON.parse(localStorage.getItem("currentUser")) == ""){
-            return false
+function logging() {
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (!currentUser || !currentUser.username) {
+            return false;
       }
+      return true;
 }
-
 //handle add to cart 
+$(".cart-btn").click(function(){
+      $("#cartmodal").modal()
+})
 $(document).ready(function() {
+      logging()
       $("#logout").click(function(e){
             e.preventDefault();
             logout();
-      })
-      $(".cart-btn").click(function(){
-            $("#cartmodal").modal()
       })
       $(document).on("click", "#addCart", function(e){
             e.preventDefault();
@@ -491,6 +493,7 @@ $(document).ready(function() {
                         localStorage.setItem("users", JSON.stringify(users))
                         
                   })
+
             }else{
                   alert("Bạn phải đăng nhập để thêm sản phẩm vào giỏ hàng")
                   window.location.href = '../HTML/login.html';
@@ -499,9 +502,10 @@ $(document).ready(function() {
 })
 
 //render cart modal
-$(document).ready(function(){
+function renderCart(){
       let html =''
       let cartList = $(".cart-table")
+      cartList.empty()
       let productCounts = {}
       let currentUserHistory = JSON.parse(localStorage.getItem("currentUser")).history
       console.log(currentUserHistory)
@@ -514,30 +518,32 @@ $(document).ready(function(){
             }
       }
       console.log(productCounts)
-
       for (let productId in productCounts) {
             let product = products.find(p => p.id == productId);
             html += `
-                  <tr>
+                  <tr id="${productId}" >
                         <td>${product.name}</td>
                         <td>${product.price} $</td>
                         <td>${productCounts[productId]}</td>
-                        <td>${productCounts[product.id] * product.price} $</td>
+                        <td>${productCounts[productId] * product.price} $</td>
                         <td> <button class="remove-btn btn btn-danger" data-index="${productId}">Remove</button></td>
                   </tr>
             `;
       }
-
       cartList.append(html)
+}
+renderCart()
 
-      $(document).on("click", ".remove-btn", function () {
-            // let index = $(this).data("index")
-            // currentUserHistory.splice(index, 1)
-            // localStorage.setItem("currentUser", JSON.stringify({ history: currentUserHistory }))
-            // $(this).closest("tr").remove()
-      })
 
-})
 
 //remove product from cart
 
+// $(document).ready(function(){
+//       let productId = JSON.parse(localStorage.getItem("productId"))
+//       let currentUserHistory = JSON.parse(localStorage.getItem("currentUser")).history
+
+
+//       $(document).on("click",`button[data-index='${productId}']`,function(){
+//             console.log(currentUserHistory)
+//       })
+// })
